@@ -1,0 +1,6 @@
+<h2>Izmeni autora</h2>
+<form action="/authors/<%= author.id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+    <a href="/authors/<%= author.id %>">Nazad</a>
+    <button type="submit">Izmeni</button>
+</form>
