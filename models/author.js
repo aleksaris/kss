@@ -13,7 +13,7 @@ authorSchema.pre('remove', function(next) {
         if (err) {
             next(err)
         } else if (books.length > 0) {
-            next(new Error('Knjige ovog autora i dalje postoje'))
+            next(new Error('Knjige ovog pisca i dalje postoje'))
         } else {
             next()
         }

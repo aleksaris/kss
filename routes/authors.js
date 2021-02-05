@@ -77,7 +77,7 @@ router.put('/:id', async (req, res) => {
         } else {
             res.render('authors/edit', {
                 author: author,
-                errorMessage: 'Greska pri izmeni autora'
+                errorMessage: 'Greska pri izmeni pisca'
             })
         }
     }
