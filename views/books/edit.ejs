@@ -1,6 +1,8 @@
 <h2 class="page-header">Uredi knjigu</h2>
 <form action="/books/<%= book.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
     <%- include('_form_fields') %>
-    <a href="/books">Nazad</a>
-    <button type="submit">Izmeni</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-danger" href="/books">Nazad</a>
+        <button class="btn btn-primary" type="submit">Izmeni</button>
+    </div>
 </form>

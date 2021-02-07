@@ -1,6 +1,8 @@
 <h2 class="page-header">Novi pisac</h2>
 <form action="/authors" method="POST">
     <%- include('_form_fields') %>
-    <a href="/authors">Nazad</a>
-    <button type="submit">Dodaj</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-danger" href="/authors">Nazad</a>
+        <button class="btn btn-primary" type="submit">Dodaj</button>
+    </div>
 </form>

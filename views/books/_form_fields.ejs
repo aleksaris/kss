@@ -1,33 +1,40 @@
-<div>
-    <label>Naziv</label>
-    <input type="text" name="title" value="<%= book.title %>">
+<div class="form-row">
+    <div class="form-item">
+        <label>Naziv</label>
+        <input type="text" name="title" value="<%= book.title %>">
+    </div>
+    <div class="form-item">
+        <label>Pisac</label>
+        <select name="author">
+            <% authors.forEach(author=> { %>
+                <% if (author.id===book.author ) { %>
+                    <option selected label="<%= author.name %>" value="<%= author.id %>">
+                        <% } else { %>
+                    <option label="<%= author.name %>" value="<%= author.id %>">
+                        <% } %>
+                            <% }) %>
+        </select>
+    </div>
 </div>
-<div>
-    <label>Pisac</label>
-    <select name="author">
-        <% authors.forEach(author=> { %>
-            <% if (author.id===book.author ) { %>
-                <option selected label="<%= author.name %>" value="<%= author.id %>">
-                    <% } else { %>
-                <option label="<%= author.name %>" value="<%= author.id %>">
-                    <% } %>
-                        <% }) %>
-    </select>
+<div class="form-row">
+    <div class="form-item">
+        <label>Datum objavljivanja</label>
+        <input type="date" name="publishDate"
+            value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+    </div>
+    <div class="form-item">
+        <label>Broj stranica</label>
+        <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+    </div>
 </div>
-<div>
-    <label>Datum objavljivanja</label>
-    <input type="date" name="publishDate"
-        value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
-</div>
-<div>
-    <label>Broj stranica</label>
-    <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
-</div>
-<div>
-    <label>Naslovna</label>
-    <input type="file" name="cover">
-</div>
-<div>
-    <label>Opis</label>
-    <textarea name="description"><%= book.description %></textarea>
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Naslovna</label>
+        <input type="file" name="cover">
+    </div>
+    <div class="form-item">
+        <label>Opis</label>
+        <textarea name="description"><%= book.description %></textarea>
+    </div>
 </div>
