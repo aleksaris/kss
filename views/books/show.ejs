@@ -1,10 +1,21 @@
 <h2 class="page-header"><%= book.title %></h2>
-<img width="100" height="150" src="<%= book.coverImagePath %>">
-<div>Pisac: <%= book.author.name %></div>
-<div>Datum objavljivanja: <%= book.publishDate.toDateString() %></div>
-<div>Broj stranica: <%= book.pageCount %></div>
-<div>Opis: <%= book.description %></div>
-
-<a href="/books/<%= book.id %>/edit">Izmeni</a>
-<%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %> 
-<a href="/authors/<%= book.author.id %>">Prikazi pisca</a>
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= book.coverImagePath %>">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Izmeni</a>
+            <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %> 
+            <a class="btn btn-primary book-details-author-btn" href="/authors/<%= book.author.id %>">Prikazi pisca</a>
+        </div>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label">Pisac</div>
+        <div><%= book.author.name %></div>
+        <div class="book-details-label">Datum objavljivanja</div>
+        <div><%= book.publishDate.toDateString() %></div>
+        <div class="book-details-label">Broj stranica</div>
+        <div><%= book.pageCount %></div>
+        <div class="book-details-label">Opis</div>
+        <div><%= book.description %></div>
+    </div>
+</div>
